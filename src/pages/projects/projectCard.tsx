@@ -15,7 +15,7 @@ function ProjectCard({ dataProject, day }: Props) {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="group relative h-48 flex items-center justify-center shadow-xl bg-white opacity-90 rounded-lg">
+    <div className="group relative h-48 flex items-center justify-center shadow-xl bg-white opacity-90 rounded-xl border border-gray-200">
       <Text className="font-poppins text-xl font-extrabold text-primary-700 absolute left-5 top-5 group-hover:opacity-50">{`DAY ${day}`}</Text>
       {dataProject.is_ready && (
         <>
@@ -33,7 +33,7 @@ function ProjectCard({ dataProject, day }: Props) {
 
           <div className="opacity-0 group-hover:opacity-100 absolute">
             <button
-              className="rounded-lg px-5 py-2 bg-primary-400 flex flex-row items-center"
+              className="rounded-lg px-5 py-2 bg-primary-700 flex flex-row items-center"
               onClick={onProjectModal}
             >
               <LuMoonStar className="text-white" />
