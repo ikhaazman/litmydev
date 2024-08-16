@@ -43,9 +43,11 @@ function ProjectModal({ isOpen, onProjectModal, dataProject }: Props) {
             />
           </AspectRatio>
           <p className="mt-3 text-lg ">
-            <span className="font-semibold text-primary-900">
-              {dataProject.presenter_name}
-            </span>
+            <a href={dataProject.presenter_url}>
+              <span className="font-semibold text-primary-900">
+                {dataProject.presenter_name}
+              </span>
+            </a>
           </p>
         </ModalBody>
         <ModalFooter>
