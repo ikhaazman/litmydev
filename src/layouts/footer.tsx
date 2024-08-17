@@ -4,7 +4,7 @@ import { SiYoutube } from "react-icons/si";
 const Footer = () => {
   return (
     <div className="w-full">
-      <div className="bg-gradient-to-b from-primary-100 to-primary-300 text-center gap-y-5 lg:px-96 md:px-48 max-sm:px-10 py-12 flex flex-col items-center">
+      <div className="bg-gradient-to-b from-tertiary-100 to-primary-200 text-center gap-y-5 lg:px-96 md:px-48 max-sm:px-10 py-12 flex flex-col items-center">
         <p className="font-semibold text-3xl font-manrope">Ladies in Tech</p>
         <p className="font-poppins font-normal">
           <em>
