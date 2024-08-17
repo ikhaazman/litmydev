@@ -8,6 +8,8 @@ import {
   TabPanel,
   TabIndicator,
 } from "@chakra-ui/react";
+import DirectoryData from "./directoryData";
+import DirectoryCard from "./directoryCard";
 
 type Props = {};
 
@@ -43,6 +45,11 @@ function Directories(_props: Props) {
                 >
                   MEMMMMMMBEERRRSSS
                 </p>
+
+                {Array.from({ length: DirectoryData.length }, (_, index) => {
+                  const project = DirectoryData[index];
+                  return <DirectoryCard dataDirectory={project} key={index} />;
+                })}
               </TabPanel>
               <TabPanel>
                 <p>ORGGGGGGANISATION</p>
