@@ -9,18 +9,30 @@ type Props = {
 
 function DirectoryCard({ dataDirectory }: Props) {
   return (
-    <div className="group relative h-auto flex flex-col text-left justify-center">
-      <div className="pb-3 w-100">
+    <div className="group relative h-auto flex flex-col text-left mb-4">
+      <div
+        className={`w-100 h-56 flex ${
+          dataDirectory.img_url === undefined ||
+          dataDirectory.img_url === "" ||
+          dataDirectory.img_url === null
+            ? "rounded-lg border border-primary-900/10"
+            : ""
+        }`}
+      >
         <img
-          src={dataDirectory.img_url}
+          src={
+            dataDirectory.img_url ??
+            "https://img.litmy.dev/icon-lady-placeholder.png"
+          }
           alt={dataDirectory.name}
-          className="rounded-lg object-cover"
+          className={`rounded-lg object-cover h-full w-full `}
         />
+        {/* {typeof dataDirectory.img_url} */}
       </div>
-      <p className="text-2xl font-bold pb-3">{dataDirectory.name}</p>
+      <p className="text-2xl font-bold mt-3 pb-3">{dataDirectory.name}</p>
       <p className="text-xs pb-3">{dataDirectory.intro}</p>
       <p className="text-xs text-primary-700 font-semibold pb-3">
-        {dataDirectory.job_title}
+        {dataDirectory.field}
       </p>
       <div className="flex flex-row gap-3 items-center">
         {dataDirectory.linkedin_url && (
