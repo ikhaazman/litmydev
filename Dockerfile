@@ -6,18 +6,20 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies
-COPY package.json package-lock.json* ./
-RUN npm ci
+COPY package.json package-lock.json ./
+RUN npm install --legacy-peer-deps
 
 # Rebuild the source code only when needed
 FROM base AS builder
-WORKDIR /app
+WORKDIR /temp/dev
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 RUN npm run build
 
 FROM base AS runner
-COPY --from=builder /app/build ./build
+WORKDIR /app
+COPY --from=builder /temp/dev/build ./build
 RUN npm install -g serve
-CMD [ "serve", "-s", "build"]
+EXPOSE 3000
+CMD ["npx", "serve", "-s", "./build", "-p", "3000"]
