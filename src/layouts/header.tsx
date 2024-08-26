@@ -5,7 +5,9 @@ import { IMAGES } from "../assets";
 const Header = () => {
   return (
     <div className="py-4 px-20 max-sm:px-10 flex justify-between items-center bg-transparent absolute top-0 z-10 w-full">
-      <img src={IMAGES.litmyLogo} alt="Ladies in Tech MY" className="w-20" />
+      <Link to="/home">
+        <img src={IMAGES.litmyLogo} alt="Ladies in Tech MY" className="w-20" />
+      </Link>
       <ul className="flex text-xl gap-x-12 font-poppins">
         <li className="">
           <Link to="/home">Home</Link>

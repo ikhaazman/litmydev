@@ -19,7 +19,7 @@ const OrganisationData: OrganisationDataItems[] = [
     discord_url: "https://invite.devtalk.club",
     twitter_url: "https://www.x.com/devtalk_my",
     youtube_url: "https://www.youtube.com/@devtalk-my",
-    img_url: "https://img.litmy.dev/maxresdefault.jpg",
+    img_url: "/logo/devtalk.svg",
   },
   {
     is_active: true,
